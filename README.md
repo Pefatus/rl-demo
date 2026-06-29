@@ -1,2 +1,1 @@
-Run using:
-uv run main.py
+Run using:<br><code>uv run main.py</code>
