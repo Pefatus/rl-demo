@@ -35,8 +35,7 @@ while running:
     elif d == "U": head[1] -= 1
     elif d == "D": head[1] += 1
 
-    for body in snake:
-        if head[0] == body[0] and head[1] == body[1]: exit()
+    if head in snake: exit()
 
     snake = [head] + snake
     
@@ -53,7 +52,7 @@ while running:
     if head[0] < 0 or head[0] >= MAX_V_TILES: exit()
     if head[1] < 0 or head[1] >= MAX_V_TILES: exit()
 
-    screen.fill("gray")
+    screen.fill("black")
     
     if food_present: pygame.draw.rect(screen, "brown", (food[0]*TILE_W, food[1]*TILE_W, TILE_W, TILE_W))
     for i, body in enumerate(snake):
